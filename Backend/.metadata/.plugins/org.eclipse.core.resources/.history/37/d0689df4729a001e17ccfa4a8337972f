@@ -1,0 +1,8 @@
+package bank.app.teller.controller;
+
+@RestController
+@RequestMapping(path = "/api/v1/customer")
+public class CustomerController {
+	@GetMapping("/hello")
+
+}

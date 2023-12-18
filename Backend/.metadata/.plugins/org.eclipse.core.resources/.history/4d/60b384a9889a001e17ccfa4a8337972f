@@ -1,0 +1,38 @@
+package bank.app.teller.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import bank.app.teller.model.Account;
+import bank.app.teller.service.AccountService;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v1/account")
+public class AccountController {
+    private final AccountService accountService;
+
+    @Autowired
+    public AccountController(AccountService accountService) {
+        this.accountService = accountService;
+    }
+
+    @GetMapping("/all")
+    public List<Account> getAllAccounts() {
+        return accountService.getAllAccounts();
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<String> addAccount(@RequestBody Account account) {
+        accountService.addAccount(account);
+        return ResponseEntity.ok().body("Account created successfully");
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteAccount(@PathVariable Long id) {
+        accountService.deleteAccount(id);
+        return ResponseEntity.ok().body("Account deleted successfully");
+    }
+}

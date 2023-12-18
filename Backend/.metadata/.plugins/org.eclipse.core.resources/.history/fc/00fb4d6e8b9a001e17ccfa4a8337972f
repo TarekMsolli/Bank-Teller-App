@@ -1,0 +1,48 @@
+package bank.app.teller.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import bank.app.teller.model.Account;
+import bank.app.teller.model.Customer;
+import bank.app.teller.repository.AccountRepository;
+import bank.app.teller.repository.CustomerRepository;
+
+@Service
+public class AccountService {	
+	private final AccountRepository accountRepository;
+	private final CustomerRepository customerRepository;
+	
+	@Autowired
+	public AccountService(AccountRepository accountRepository, CustomerRepository customerRepository) {
+		super();
+		this.accountRepository = accountRepository;
+		this.customerRepository = customerRepository;
+	}
+	
+	public List<Account> getAllAccounts() {
+		return accountRepository.findAll();
+	}
+	
+	public String addAccount(Account account) {
+	    if (account.getCustomer() == null || account.getCustomer().getId() == null) {
+	        return "Customer does not exist";
+	    }
+	    Optional<Customer> customerOpt = customerRepository.findById(account.getCustomer().getId());
+	    if (!customerOpt.isPresent()) {
+	        return "Customer does not exist";
+	    }
+	    account.setCustomer(customerOpt.get());
+	    accountRepository.save(account);
+	    return "Account created successfully";
+	}
+
+
+
+	public void deleteAccount(Long id) {
+		accountRepository.deleteById(id);
+	}
+}

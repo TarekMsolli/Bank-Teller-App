@@ -1,0 +1,6 @@
+package bank.app.teller.repository;
+
+@Repository
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+}
+

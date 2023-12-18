@@ -1,0 +1,5 @@
+package bank.app.teller.service;
+
+public class AccountService {
+
+}

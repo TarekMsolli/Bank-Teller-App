@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;CustomerController.java&apos; to &apos;bank_application/src/main/java/bank.app.teller.controller&apos;&#x0D;&#x0A;- Original project: &apos;bank_application&apos;&#x0D;&#x0A;- Destination element: &apos;bank_application/src/main/java/bank.app.teller.controller&apos;&#x0D;&#x0A;- Original element: &apos;CustomerController.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;bank.app.teller.controller" element1="src/main/resources/bank/app/teller/controller/CustomerController.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1702553379372" units="0" version="1.0"/>
+</session>

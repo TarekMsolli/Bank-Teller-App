@@ -1,0 +1,5 @@
+package bank.app.teller.repository;
+
+public interface CustomerRepository {
+
+}

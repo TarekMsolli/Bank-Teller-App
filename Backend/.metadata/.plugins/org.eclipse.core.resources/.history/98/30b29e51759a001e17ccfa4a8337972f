@@ -1,0 +1,11 @@
+package bank.app.teller.service;
+
+import bank.app.teller.model.Customer;
+
+public class CustomerService {
+	public List<Customer> getCustomers()
+	{
+	return List.of(
+	new Customer((long) 1, "John", "Doe", "Beb Jdid", "john@doe.org"));
+	}
+}

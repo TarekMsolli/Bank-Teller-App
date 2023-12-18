@@ -1,0 +1,15 @@
+package bank.app.teller.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import bank.app.teller.model.Customer;
+
+@Service
+public class CustomerService {
+	public List<Customer> getCustomers()
+	{
+	return List.of(new Customer("John", "Doe", "Beb Jdid", "12345678", "john@doe.org"));
+	}
+}
